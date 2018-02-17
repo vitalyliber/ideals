@@ -4,7 +4,7 @@ RSpec.describe CategoriesController, type: :controller do
   it "returns list of categories" do
     create :category
     get :index
-    expect(response).to have_http_status(:success)
+    expect(response).to be_successful
     category = JSON.parse(response.body).first
     expect(category['id']).to be_present
     expect(category['name']).to be_present
@@ -13,7 +13,7 @@ RSpec.describe CategoriesController, type: :controller do
 
   it "create new category" do
     post :create, { params: { category: { name: 'Candy' } } }
-    expect(response).to have_http_status(:success)
+    expect(response).to be_successful
     category = JSON.parse(response.body)
     expect(category['id']).to be_present
     expect(category['name']).to eq('Candy')

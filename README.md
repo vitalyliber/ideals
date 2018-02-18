@@ -1,24 +1,56 @@
-# README
+# iDeals
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**ruby version:** 2.5.0
 
-Things you may want to cover:
+**gemset:** ideals
 
-* Ruby version
+## How to start application for developing
 
-* System dependencies
+Install postgres dependencies:
 
-* Configuration
+_For mac_
 
-* Database creation
+```
+brew install libpq
+```
 
-* Database initialization
+_For linux_
 
-* How to run the test suite
+```
+apt-get install postgresql-client
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start postgres container:
 
-* Deployment instructions
+```
+docker-compose up
+```
 
-* ...
+Create migrations:
+
+```
+rake db:create db:migrate
+```
+
+Run seeds:
+
+```
+rake db:seed
+```
+
+Start your Rails server:
+
+```
+rails start
+```
+
+## How to start common tests
+
+```
+rspec
+```
+
+## On/Off caching in dev mode
+```
+rails dev:cache
+```

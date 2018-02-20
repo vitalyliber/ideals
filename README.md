@@ -44,6 +44,12 @@ Start your Rails server:
 rails start
 ```
 
+Start WebPacker dev server:
+
+```
+./bin/webpack-dev-server
+```
+
 ## How to start common tests
 
 ```
